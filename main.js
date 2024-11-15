@@ -1,27 +1,30 @@
 import steps from "./steps.js"
+import { setupFriendList } from "./setupFriendList.js"
 
-const girl = document.querySelector('.girl')
+const player = document.querySelector('.player')
 const uniButton = document.querySelector('.unibutton')
 
 let currentstep = 0
+
+setupFriendList()
 
 uniButton.addEventListener('click', () => {
   currentstep += 1
   const {x, y} = steps[currentstep]
 
   uniButton.disabled = true
-  girl.classList.add('moving')
+  player.classList.add('moving')
 
   setTimeout(() => {
-    girl.classList.remove('moving')
+    player.classList.remove('moving')
     if (currentstep !== steps.length - 1) {
       uniButton.disabled = false
     }
   }, 1200)
 
   setTimeout(() => {
-    girl.style.left = `${x}px`
-    girl.style.bottom = `${y}px`
+    player.style.left = `${x}px`
+    player.style.bottom = `${y}px`
   }, 200)
 })
 

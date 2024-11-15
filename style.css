@@ -15,6 +15,7 @@
 .controls {
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
   margin: 0 17px 0 3px;
   position: absolute;
   bottom: 18px;
@@ -25,6 +26,11 @@
   width: 536px;
   height: 63px;
   background-image: url(/images/friendsbar.png);
+  padding: 0 11px 0 9px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 button {
@@ -40,8 +46,8 @@ button {
 button:active, button:disabled {
   filter: brightness(90%);
   transform: translate(0px, 2px);
+  cursor: default;
 }
-
 
 .chat {
   width: 65px;
@@ -71,10 +77,10 @@ button:active, button:disabled {
   margin-left: 6px;
 }
 
-.girl {
+.player {
   width: 20px;
   height: 68px;
-  background-image: url(/images/girl.png);
+  background-image: url(/images/player.png);
   position: absolute;
   bottom: 123px;
   left: 434px;
@@ -83,4 +89,57 @@ button:active, button:disabled {
 
 .moving {
   transform: translate(0px, -10px) scale(110%);
+}
+
+.arrowLeft {
+  width: 14px;
+  height: 27px;
+  background-image: url(/images/arrowleft.png);
+}
+
+.arrowRight {
+  width: 14px;
+  height: 27px;
+  background-image: url(/images/arrowright.png);
+}
+
+.friendListWrapper {
+  width: 474px;
+  overflow-x: hidden;
+}
+
+.friendList {
+  height: 56px;
+  width: 474px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 11px;
+  transition: transform 0.5s ease;
+}
+
+.friend {
+  width: 50px;
+  height: 51px;
+  background-image: url(/images/friendnoavatar.png);
+}
+
+.friendAvatar {
+  width: 50px;
+  height: 51px;
+  background-image: url(/images/friendavatar.png);
+}
+
+.addFriendButton {
+  position: relative;
+}
+
+.plusIcon {
+  width: 23px;
+  height: 22px;
+  background-image: url(/images/plusicon.png);
+  position: absolute;
+  bottom: 32px;
+  left: 33px;
+  z-index: 1;
 }
