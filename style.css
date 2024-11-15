@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.field {
+  position: relative;
+  margin: 0 auto;
+  height: 630px;
+  width: 980px;
+  background-image: url(/images/field.png);
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  margin: 0 17px 0 3px;
+  position: absolute;
+  bottom: 18px;
+  width: 100%;
+}
+
+.friends {
+  width: 536px;
+  height: 63px;
+  background-image: url(/images/friendsbar.png);
+}
+
+button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+button:active, button:disabled {
+  filter: brightness(90%);
+  transform: translate(0px, 2px);
+}
+
+
+.chat {
+  width: 65px;
+  height: 60px;
+  background-image: url(/images/chat.png);
+  margin-left: 3px;
+}
+
+.unibutton {
+  width: 202px;
+  height: 63px;
+  background-image: url(/images/unibutton.png);
+  margin-left: 8px;
+}
+
+.messages {
+  width: 64px;
+  height: 60px;
+  background-image: url(/images/messages.png);
+  margin-left: 9px;
+}
+
+.leaderboardbutton {
+  width: 66px;
+  height: 61px;
+  background-image: url(/images/leaderboard.png);
+  margin-left: 6px;
+}
+
+.girl {
+  width: 20px;
+  height: 68px;
+  background-image: url(/images/girl.png);
+  position: absolute;
+  bottom: 123px;
+  left: 434px;
+  transition: bottom 1s ease, left 1s ease, transform 0.2s ease;
+}
+
+.moving {
+  transform: translate(0px, -10px) scale(110%);
+}
