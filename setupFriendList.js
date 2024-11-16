@@ -9,7 +9,7 @@ export function setupFriendList() {
     for (let i = 0; i < data.friends.length; i++) {
         const friend = document.createElement("div")
         friend.classList.add("friendAvatar")
-        friend.style.backgroundImage = `url(/images/${data.friends[i].img.slice(1)})`
+        friend.style.backgroundImage = `url(./images/${data.friends[i].img.slice(1)})`
         friendList.appendChild(friend)
     }
 
@@ -24,7 +24,6 @@ export function setupFriendList() {
     arrowLeft.disabled = true
 
     arrowRight.addEventListener('click', () => {
-        console.log('clicked')
         currentShift += 1
         friendList.style.transform = `translate(${-60 * currentShift}px, 0)`
         arrowLeft.disabled = false
@@ -34,7 +33,6 @@ export function setupFriendList() {
     })
 
     arrowLeft.addEventListener('click', () => {
-        console.log('clicked')
         currentShift -= 1
         friendList.style.transform = `translate(${-60 * currentShift}px, 0)`
         arrowRight.disabled = false

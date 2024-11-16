@@ -18,7 +18,7 @@ function createLeaderboardEntry(player, place) {
         <div class="place">
             ${place}
         </div>
-        <img class="leaderboardAvatar" src="/images/${player.img.slice(1)}">
+        <img class="leaderboardAvatar" src="./images/${player.img.slice(1)}">
         <div class="name  ${friends.some(id => player.id === id) ? "friendName" : ""}">
             ${player.name} ${player.lastName}
         </div>
