@@ -19,10 +19,13 @@ uniButton.addEventListener('click', () => {
 
   setTimeout(() => {
     player.classList.remove('moving')
+  }, 1200)
+
+  setTimeout(() => {
     if (currentstep !== steps.length - 1) {
       uniButton.disabled = false
     }
-  }, 1200)
+  }, 1400)
 
   setTimeout(() => {
     player.style.left = `${x}px`

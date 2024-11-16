@@ -163,6 +163,7 @@ dialog {
   font-weight: 500;
   font-style: normal;
   color: white;
+  user-select: none;
 }
 
 .open {
