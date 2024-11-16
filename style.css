@@ -217,7 +217,7 @@ dialog::backdrop {
 }
 
 .entriesWrapper {
-  height: 231px;
+  height: 229px;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
