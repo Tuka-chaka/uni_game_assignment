@@ -4,12 +4,27 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="/style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
     <div id="app">
       <div class="field">
+        <dialog>
+          <div class="modalHeader">Рейтинг игроков</div>
+          <button type="button" class="crossButton"></button>
+          <div class="modalContent">
+            <div class="leaderboardHeader">
+              <div class="placeHeader">Место</div>
+              <div class="name">Имя Фамилия</div>
+              <div class="experience">Опыт</div>
+            </div>
+            <div class="entriesWrapper"></div>
+          </div>
+        </dialog>
         <div class="player"></div>
         <div class="controls">
           <div class="friends">
@@ -26,7 +41,7 @@
           <button type="button" class="chat"></button>
           <button type="button" class="unibutton"></button>
           <button type="button" class="messages"></button>
-          <button type="button" class="leaderboardbutton"></button>
+          <button type="button" class="leaderboardButton"></button>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import steps from "./steps.js"
 import { setupFriendList } from "./setupFriendList.js"
+import { setupModal } from "./setupModal.js"
 
 const player = document.querySelector('.player')
 const uniButton = document.querySelector('.unibutton')
@@ -7,6 +8,7 @@ const uniButton = document.querySelector('.unibutton')
 let currentstep = 0
 
 setupFriendList()
+setupModal()
 
 uniButton.addEventListener('click', () => {
   currentstep += 1

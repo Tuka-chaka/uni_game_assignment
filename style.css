@@ -70,7 +70,7 @@ button:active, button:disabled {
   margin-left: 9px;
 }
 
-.leaderboardbutton {
+.leaderboardButton {
   width: 66px;
   height: 61px;
   background-image: url(/images/leaderboard.png);
@@ -110,11 +110,11 @@ button:active, button:disabled {
 
 .friendList {
   height: 56px;
-  width: 474px;
+  width: min-content;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 11px;
+  gap: 10px;
   transition: transform 0.5s ease;
 }
 
@@ -143,3 +143,143 @@ button:active, button:disabled {
   left: 33px;
   z-index: 1;
 }
+
+.arrowLeft:disabled, .arrowRight:disabled {
+  transform: none;
+}
+
+dialog {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: -500px;
+  margin: 0 auto;
+  background-image: url(/images/modalbackground.png);
+  width: 522px;
+  height: 455px;
+  overflow: visible;
+  transition: top 0.5s ease;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+}
+
+.open {
+  top: 82px;
+}
+
+dialog::backdrop {
+  background-color: #d1c6b7;
+  opacity: 0%;
+  transition: opacity 0.5s ease;
+}
+
+.open::backdrop {
+  opacity: 52%;
+}
+
+.crossButton {
+  height: 26px;
+  width: 26px;
+  background-image: url(/images/crossicon.png);
+  position: absolute;
+  top: 14px;
+  right: 17px;
+}
+
+.modalHeader {
+  height: 33px;
+  width: 264px;
+  background-image: url(/images/modalheader.png);
+  position: absolute;
+  top: -11px;
+  left: 126px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  padding-bottom: 3px;
+}
+
+.modalContent {
+  width: 464px;
+  height: 324px;
+  background-image: url(/images/modalcontentbackground.png);
+  position: absolute;
+  left: 29px;
+  bottom: 37px;
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.entriesWrapper {
+  height: 231px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9em;
+  padding-bottom: 6px;
+}
+
+.entriesWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.leaderboardHeader {
+  width: 403px;
+  height: 29px;
+  background-image: url(/images/leaderboardheader.png);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 16px;
+  font-size: 0.9em;
+  padding-top: 1px;
+  font-weight: 400;
+  margin-bottom: 6px;
+  flex-shrink: 0;
+}
+
+.placeHeader {
+  width: 83px;
+}
+
+.name {
+  width: 228px;
+}
+
+.leaderboardEntry {
+  width: 403px;
+  height: 27px;
+  background-image: url(/images/scoreentry.png);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.place {
+  width: 66px;
+  padding-left: 12px;
+  text-align: center;
+}
+
+.leaderboardAvatar {
+  width: 30px;
+  height: 29px;
+  margin-right: 5px;
+}
+
+.friendName {
+  color: #FC0;
+  text-shadow: #FC0 1px 0 5px;
+}
+
+
+
+
+
