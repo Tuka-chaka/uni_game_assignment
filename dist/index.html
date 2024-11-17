@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin>(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))r(n);new MutationObserver(n=>{for(const s of n)if(s.type==="childList")for(const m of s.addedNodes)m.tagName==="LINK"&&m.rel==="modulepreload"&&r(m)}).observe(document,{childList:!0,subtree:!0});function i(n){const s={};return n.integrity&&(s.integrity=n.integrity),n.referrerPolicy&&(s.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?s.credentials="include":n.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function r(n){if(n.ep)return;n.ep=!0;const s=i(n);fetch(n.href,s)}})();const y=[{x:434,y:123},{x:341,y:153},{x:267,y:111},{x:180,y:92},{x:101,y:120},{x:113,y:185}],c={rating:[{id:"123",name:"Владимир",lastName:"Ларионов",img:"./male.png",points:"463"},{id:"9",name:"Владимир",lastName:"Сергеев",img:"./male.png",points:"521"},{id:"231",name:"Вениамин",lastName:"Васильев",img:"./male.png",points:"865"},{id:"321",name:"Мария",lastName:"Логинова",img:"./female.png",points:"865"},{id:"492",name:"Борис",lastName:"Казанцев",img:"./male.png",points:"784"},{id:"452",name:"Полина",lastName:"Калинина",img:"./female.png",points:"225"},{id:"796",name:"Даниил",lastName:"Воробьёв",img:"./male.png",points:"642"},{id:"4",name:"Эрик",lastName:"Аксёнов",img:"./male.png",points:"150"},{id:"1155",name:"Иван",lastName:"Иванов",img:"./male.png",points:"100"},{id:"12145",name:"Артем",lastName:"Алексеев",img:"./male.png",points:"1000"}],friends:[{id:"9",name:"Владимир",lastName:"Сергеев",img:"./male.png"},{id:"4",name:"Эрик",lastName:"Аксёнов",img:"./male.png"},{id:"15411",name:"Ирина",lastName:"Чеснокова",img:"./female.png"},{id:"15564",name:"Дарина",lastName:"Боброва",img:"./female.png"}]},a=document.querySelector(".friendList"),o=document.querySelector(".arrowLeft"),u=document.querySelector(".arrowRight");function v(){for(let t=0;t<c.friends.length;t++){const i=document.createElement("div");i.classList.add("friendAvatar"),i.style.backgroundImage=`url(./images/${c.friends[t].img.slice(1)})`,a.appendChild(i)}for(let t=0;t<8;t++){const i=document.createElement("div");i.classList.add("friend"),a.appendChild(i)}let e=0;o.disabled=!0,u.addEventListener("click",()=>{e+=1,a.style.transform=`translate(${-60*e}px, 0)`,o.disabled=!1,e===5&&(u.disabled=!0)}),o.addEventListener("click",()=>{e-=1,a.style.transform=`translate(${-60*e}px, 0)`,u.disabled=!1,e===0&&(o.disabled=!0)})}const d=document.querySelector("dialog"),L=document.querySelector(".leaderboardButton"),b=document.querySelector(".crossButton"),N=document.querySelector(".entriesWrapper"),g=[...c.rating],h=c.friends.map(e=>e.id);g.sort((e,t)=>t.points-e.points);function x(e,t){const i=document.createElement("div");return i.classList.add("leaderboardEntry"),i.innerHTML=`
+    <div class="leaderboardEntry">
+        <div class="place">
+            ${t}
+        </div>
+        <img class="leaderboardAvatar" src="./images/${e.img.slice(1)}">
+        <div class="name  ${h.some(r=>e.id===r)?"friendName":""}">
+            ${e.name} ${e.lastName}
+        </div>
+        <div class="experience">
+            ${e.points}
+        </div>
+    </div>`,i}function E(){L.addEventListener("click",()=>{d.showModal(),d.classList.add("open")}),b.addEventListener("click",()=>{d.classList.remove("open"),setTimeout(()=>d.close(),500)});for(let e=0;e<g.length;e++)N.appendChild(x(g[e],e+1))}const l=document.querySelector(".player"),p=document.querySelector(".unibutton");let f=0;v();E();p.addEventListener("click",()=>{f+=1;const{x:e,y:t}=y[f];p.disabled=!0,l.classList.add("moving"),setTimeout(()=>{l.classList.remove("moving")},1200),setTimeout(()=>{f!==y.length-1&&(p.disabled=!1)},1400),setTimeout(()=>{l.style.left=`${e}px`,l.style.bottom=`${t}px`},200)});</script>
+    <style rel="stylesheet" crossorigin>*{margin:0;padding:0;box-sizing:border-box}.field{position:relative;margin:0 auto;height:630px;width:980px;background-image:url(./images/field.png)}.controls{display:flex;flex-direction:row;align-items:flex-end;margin:0 17px 0 3px;position:absolute;bottom:18px;width:100%}.friends{width:536px;height:63px;background-image:url(./images/friendsbar.png);padding:0 11px 0 9px;display:flex;flex-direction:row;align-items:center;justify-content:space-between}button{background:none;color:inherit;border:none;padding:0;font:inherit;cursor:pointer;outline:inherit}button:active,button:disabled{filter:brightness(90%);transform:translateY(2px);cursor:default}.chat{width:65px;height:60px;background-image:url(./images/chat.png);margin-left:3px}.unibutton{width:202px;height:63px;background-image:url(./images/unibutton.png);margin-left:8px}.messages{width:64px;height:60px;background-image:url(./images/messages.png);margin-left:9px}.leaderboardButton{width:66px;height:61px;background-image:url(./images/leaderboard.png);margin-left:6px}.player{width:20px;height:68px;background-image:url(./images/player.png);position:absolute;bottom:123px;left:434px;transition:bottom 1s ease,left 1s ease,transform .2s ease}.moving{transform:translateY(-10px) scale(1.1)}.arrowLeft{width:14px;height:27px;background-image:url(./images/arrowleft.png)}.arrowRight{width:14px;height:27px;background-image:url(./images/arrowright.png)}.friendListWrapper{width:474px;overflow-x:hidden}.friendList{height:56px;width:min-content;display:flex;flex-direction:row;align-items:center;gap:10px;transition:transform .5s ease}.friend{width:50px;height:51px;background-image:url(./images/friendnoavatar.png)}.friendAvatar{width:50px;height:51px;background-image:url(./images/friendavatar.png)}.addFriendButton{position:relative}.plusIcon{width:23px;height:22px;background-image:url(./images/plusicon.png);position:absolute;bottom:32px;left:33px;z-index:1}.arrowLeft:disabled,.arrowRight:disabled{transform:none}dialog{border:none;background-color:transparent;position:absolute;top:-500px;margin:0 auto;background-image:url(./images/modalbackground.png);width:522px;height:455px;overflow:visible;transition:top .5s ease;font-family:Roboto,sans-serif;font-weight:500;font-style:normal;color:#fff;-webkit-user-select:none;user-select:none}.open{top:82px}dialog::backdrop{background-color:#d1c6b7;opacity:0%;transition:opacity .5s ease}.open::backdrop{opacity:52%}.crossButton{height:26px;width:26px;background-image:url(./images/crossicon.png);position:absolute;top:14px;right:17px}.modalHeader{height:33px;width:264px;background-image:url(./images/modalheader.png);position:absolute;top:-11px;left:126px;display:flex;justify-content:center;align-items:center;font-size:25px;padding-bottom:3px}.modalContent{width:464px;height:324px;background-image:url(./images/modalcontentbackground.png);position:absolute;left:29px;bottom:37px;padding-top:32px;display:flex;flex-direction:column;align-items:center}.entriesWrapper{height:229px;overflow-y:scroll;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:.9em;padding-bottom:6px}.entriesWrapper::-webkit-scrollbar{display:none}.leaderboardHeader{width:403px;height:29px;background-image:url(./images/leaderboardheader.png);display:flex;flex-direction:row;align-items:center;padding-left:16px;font-size:.9em;padding-top:1px;font-weight:400;margin-bottom:6px;flex-shrink:0}.placeHeader{width:83px}.name{width:228px}.leaderboardEntry{width:403px;height:27px;background-image:url(./images/scoreentry.png);display:flex;flex-direction:row;align-items:center}.place{width:66px;padding-left:12px;text-align:center}.leaderboardAvatar{width:30px;height:29px;margin-right:5px}.friendName{color:#fc0;text-shadow:#FC0 1px 0 5px}</style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="field">
+        <dialog>
+          <div class="modalHeader">Рейтинг игроков</div>
+          <button type="button" class="crossButton"></button>
+          <div class="modalContent">
+            <div class="leaderboardHeader">
+              <div class="placeHeader">Место</div>
+              <div class="name">Имя Фамилия</div>
+              <div class="experience">Опыт</div>
+            </div>
+            <div class="entriesWrapper"></div>
+          </div>
+        </dialog>
+        <div class="player"></div>
+        <div class="controls">
+          <div class="friends">
+            <button type="button" class="arrowLeft"></button>
+            <div class="friendListWrapper">
+              <div class="friendList">
+                <button type="button" class="friendAvatar addFriendButton">
+                  <div class="plusIcon"></div>
+                </button>
+              </div>
+            </div>
+            <button type="button" class="arrowRight"></button>
+          </div>
+          <button type="button" class="chat"></button>
+          <button type="button" class="unibutton"></button>
+          <button type="button" class="messages"></button>
+          <button type="button" class="leaderboardButton"></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

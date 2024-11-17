@@ -40,14 +40,6 @@ export function setupModal() {
         setTimeout(() => modal.close(), 500)
     })
 
-    // modal.addEventListener('click', function(e) {
-    //     if (e.target === e.currentTarget) {
-    //       e.stopPropagation()
-    //       modal.classList.remove('open')
-    //       setTimeout(() => modal.close(), 500)
-    //     }
-    // })
-
     for (let i = 0; i < rating.length; i++) {
         entriesWrapper.appendChild(createLeaderboardEntry(rating[i], i + 1))
     }
